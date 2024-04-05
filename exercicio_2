@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class exercicio_2 {
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite um número inteiro: ");
+        int num1 = scanner.nextInt();
+        
+        int total = num1 * 2; // Inicia com a soma do número digitado com ele mesmo
+        
+        for (int i = num1 - 1; i >= 0; i--) {
+            if (i % 2 == 0) {
+                total += i; // Soma o número par atual ao total
+            }
+        }
+
+        System.out.println("O total é: " + total);
+
+        scanner.close();
+    }
+}
