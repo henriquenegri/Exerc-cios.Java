@@ -1,0 +1,42 @@
+package javaapplication1;
+import java.util.Scanner;
+/**
+ *
+ * @author rique
+ */
+public class exercicio_4 {
+ 
+public class CalculadoraDeMedia {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Quantas notas deseja inserir?");
+        int quantidadeDeNotas = scanner.nextInt();
+
+        // Validando se o número de notas é válido
+        if (quantidadeDeNotas <= 0) {
+            System.out.println("Por favor, insira um número válido de notas.");
+            return; // Encerra o programa se o número de notas for inválido
+        }
+
+        double totalNotas = 0;
+        for (int i = 1; i <= quantidadeDeNotas; i++) {
+            System.out.println("Insira a nota " + i + ":");
+            double nota = scanner.nextDouble();
+
+            // Validando se a nota é válida
+            if (nota < 0 || nota > 10) {
+                System.out.println("Por favor, insira uma nota válida entre 0 e 10.");
+                return; // Encerra o programa se a nota for inválida
+            }
+
+            totalNotas += nota;
+        }
+
+        double media = totalNotas / quantidadeDeNotas;
+        System.out.println("A média das notas é: " + media);
+
+        scanner.close();
+    }
+}
+}
